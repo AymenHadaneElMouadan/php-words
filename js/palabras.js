@@ -40,4 +40,9 @@ const PALABRAS = [
   { palabra: "true", categoria: "otros", descripcion: "Literal booleano verdadero." },
   { palabra: "false", categoria: "otros", descripcion: "Literal booleano falso." },
   { palabra: "null", categoria: "otros", descripcion: "Representa la ausencia de valor." },
+  { palabra: "abstract", categoria: "clases", descripcion: "Declara una clase que no se puede instanciar o un método que las subclases deben implementar." },
+  { palabra: "static", categoria: "clases", descripcion: "Declara propiedades o métodos que pertenecen a la clase y no a una instancia." },
+  { palabra: "const", categoria: "otros", descripcion: "Define una constante cuyo valor no puede cambiar durante la ejecución." }
+
+
 ];
