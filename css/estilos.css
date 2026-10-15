@@ -1,0 +1,208 @@
+:root {
+  --fondo: #eef0fb;
+  --superficie: #f7f8ff;
+  --texto: #1c1a3a;
+  --muted: #5b5a7a;
+  --acento: #5b4bd6;
+  --acento-suave: #7a8ef0;
+  --borde: #d4d7f0;
+  --sombra: 0 12px 28px rgba(45, 40, 120, 0.1);
+
+  --cat-control: #4f3cc9;
+  --cat-control-bg: #ebe8ff;
+  --cat-funciones: #3d63d8;
+  --cat-funciones-bg: #e8efff;
+  --cat-clases: #5b7fe8;
+  --cat-clases-bg: #eef3ff;
+  --cat-excepciones: #7a93ef;
+  --cat-excepciones-bg: #f2f5ff;
+  --cat-otros: #9aa8f0;
+  --cat-otros-bg: #f6f7ff;
+
+  --fuente-display: "Trebuchet MS", "Segoe UI", sans-serif;
+  --fuente-cuerpo: "Lucida Sans", "Lucida Grande", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--fuente-cuerpo);
+  color: var(--texto);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(91, 75, 214, 0.22), transparent 40%),
+    radial-gradient(circle at 88% 8%, rgba(61, 99, 216, 0.18), transparent 38%),
+    linear-gradient(165deg, #e4e8ff 0%, var(--fondo) 48%, #f3f5ff 100%);
+}
+
+.app {
+  width: min(920px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.75rem 0 3rem;
+}
+
+.cabecera {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(91, 75, 214, 0.18);
+}
+
+#titulo {
+  margin: 0 0 0.4rem;
+  font-family: var(--fuente-display);
+  font-size: clamp(2.2rem, 5.5vw, 3.15rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  background: linear-gradient(120deg, #3a2fb0 0%, #5b4bd6 45%, #3d63d8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#subtitulo {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+}
+
+.meta {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+#version {
+  color: var(--acento);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+#controles:empty {
+  display: none;
+}
+
+#controles:not(:empty) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  box-shadow: var(--sombra);
+}
+
+#controles label {
+  font-family: var(--fuente-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#controles input,
+#controles select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--borde);
+  background: #fff;
+  color: var(--texto);
+  font: inherit;
+}
+
+#contador {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+#lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.palabra {
+  padding: 1rem 1.1rem;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-left: 4px solid var(--acento-suave);
+}
+
+.palabra--control {
+  background: var(--cat-control-bg);
+  border-left-color: var(--cat-control);
+}
+
+.palabra--funciones {
+  background: var(--cat-funciones-bg);
+  border-left-color: var(--cat-funciones);
+}
+
+.palabra--clases {
+  background: var(--cat-clases-bg);
+  border-left-color: var(--cat-clases);
+}
+
+.palabra--excepciones {
+  background: var(--cat-excepciones-bg);
+  border-left-color: var(--cat-excepciones);
+}
+
+.palabra--otros {
+  background: var(--cat-otros-bg);
+  border-left-color: var(--cat-otros);
+}
+
+.palabra-nombre {
+  font-family: var(--fuente-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-right: 0.6rem;
+}
+
+.palabra-categoria {
+  display: inline-block;
+  font-family: var(--fuente-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.palabra--control .palabra-categoria {
+  color: var(--cat-control);
+}
+
+.palabra--funciones .palabra-categoria {
+  color: var(--cat-funciones);
+}
+
+.palabra--clases .palabra-categoria {
+  color: var(--cat-clases);
+}
+
+.palabra--excepciones .palabra-categoria {
+  color: var(--cat-excepciones);
+}
+
+.palabra--otros .palabra-categoria {
+  color: var(--cat-otros);
+}
+
+.palabra-descripcion {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  #controles:not(:empty) {
+    grid-template-columns: 1fr;
+  }
+}
