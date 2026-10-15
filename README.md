@@ -20,4 +20,7 @@ php-words/
 
 ## Cómo abrirlo
 
-Abre `index.html` con doble clic en el navegador. No hace falta servidor ni dependencias.
+Abrir index.html en el navegador (doble clic).
+
+Requiere un navegador moderno.
+
