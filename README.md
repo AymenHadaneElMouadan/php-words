@@ -26,3 +26,4 @@ Requiere un navegador moderno.
 
 ## Autoria 
 
+## Tecnologias
